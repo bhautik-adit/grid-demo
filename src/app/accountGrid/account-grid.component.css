@@ -1,0 +1,159 @@
+@import "https://cdn.syncfusion.com/ej2/28.1.33/material.css";
+
+.e-checkbox-wrapper .e-frame, .e-css.e-checkbox-wrapper .e-frame {  
+    border-color: #072B40 !important;
+}
+.e-checkbox-wrapper .e-frame.e-check, .e-css.e-checkbox-wrapper .e-frame.e-check {
+    border-color: #f4891f !important;
+}
+
+ .e-grid .e-headercell span {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #072B40 !important;
+}
+.e-headercontent {
+    border-right: unset !important;
+}
+#adaptivebrowserOne{
+    .e-headercontent {
+        display: block !important;
+    }
+}
+.e-table {
+    .e-icon-ascending {
+        line-height: 14px !important;
+        color: #072B40 !important;
+    }
+    .e-rowcell {
+        color: #072B40 !important;
+        font-size: 14px !important;
+        font-weight: 400;
+        padding:11px 15px !important;
+        border-color: #E6ECF4 !important;
+        background-color: #fff !important;
+        border: 1.05px solid #E6ECF4;
+        white-space: normal;
+        line-height: 17px;
+        &.e-focused {
+            box-shadow: none !important;
+        }
+    }
+    .e-headercell {
+        padding: 0 15px !important;
+        border-color: #E6ECF4 !important;
+        border: 1.05px solid #E6ECF4;
+        .e-sortfilterdiv {
+            color: #072B40 !important;
+        }
+    }
+}
+.white-space-normal {
+    white-space: normal;
+}
+.e-grid {
+    border-radius: 6px 6px 0 0 !important;
+    border-color: #E6ECF4;
+    .e-gridheader {
+        border-top-left-radius: 6px !important;
+        border-top-right-radius: 6px !important;
+        border-color: #E6ECF4;
+    }
+}
+
+
+/*** Grid CSS Start***/
+.e-grid .e-headercell span {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #072B40 !important;
+}
+.e-listbox-wrapper .e-list-item, .e-listbox-container .e-list-item, .e-listboxtool-wrapper .e-list-item {
+    background-color: #F2F7FE !important;    
+    color: #072B40 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    font-family: "Poppins" !important;
+}
+
+.e-control, .e-css, .e-error {
+    font-family: "Poppins" !important;
+}
+/*** Grid CSS End ***/
+
+.e-grid .e-rightfreeze.e-freezerightborder {
+    border-left-width: 1px !important;
+    border-color: #e0e0e0 !important;
+}
+.e-bigger .e-grid .unread-rows .e-rowcell, .e-bigger .e-grid .e-summarycell, .e-bigger .e-grid .e-groupcaption, .e-grid.e-bigger .e-rowcell, .e-grid.e-bigger .e-summarycell, .e-grid.e-bigger .e-groupcaption {
+    background-color: #fff;   
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #072B40 !important;
+} 
+.e-bigger .e-grid .read-rows .e-rowcell, .e-bigger .e-grid .e-summarycell, .e-bigger .e-grid .e-groupcaption, .e-grid.e-bigger .e-rowcell, .e-grid.e-bigger .e-summarycell, .e-grid.e-bigger .e-groupcaption {
+    background-color: #fff;   
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #072B40 !important;
+}
+.e-grid .e-row.read-rows .e-rowcell {
+    background-color: #F7F8F9 !important;
+    &.e-leftfreeze {
+        background-color: #F7F8F9 !important;
+    }
+    &.e-rightfreeze {
+        background-color: #F7F8F9 !important;
+    }
+    &.e-selectionbackground {
+        background-color: #F2F7FE !important;
+    }
+}
+
+.e-grid .e-row.unread-rows {
+        .e-rowcell {
+            background-color: #fff !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            color: #072B40 !important;
+        &.e-leftfreeze {
+            background-color: #fff !important;
+        }
+        &.e-rightfreeze {
+            background-color: #fff !important;
+        }
+        &.e-selectionbackground {
+            background-color: #F2F7FE !important;
+        }
+    }
+}
+.e-grid.e-gridhover
+  tr.e-row:hover
+  .e-rowcell:not(.e-cellselectionbackground):not(.e-active):not(
+    .e-updatedtd
+  ):not(.e-indentcell) {
+  background-color: #F2F4F5 !important;
+}
+.e-grid .e-row.e-selectionbackground,
+.e-grid .e-rowcell.e-selectionbackground,
+.e-grid .e-active {
+  background-color: #F2F7FE !important;
+}
+
+.e-checkbox-wrapper .e-frame.e-check, .e-css.e-checkbox-wrapper .e-frame.e-check {
+    color: #fff !important;
+}
+
+.e-checkbox-wrapper .e-frame.e-stop, .e-css.e-checkbox-wrapper .e-frame.e-stop {
+    background-color: #f4891f !important;
+    border-color: #f4891f !important;
+    color: #fff !important;
+}
+.e-grid .e-rowcell .e-checkbox-wrapper, .e-grid .e-rowcell .e-css.e-checkbox-wrapper{
+    position: relative !important;
+    top:8px !important; 
+}
+
+::ng-deep #adaptivebrowserOne {
+    overflow-x: auto;
+  }

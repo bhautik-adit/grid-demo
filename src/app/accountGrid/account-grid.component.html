@@ -1,0 +1,27 @@
+
+<ng-container *ngIf="!isShowSkeleton && _columns?.length && (dataSource?.result?.length || staticDataSource.length)">
+    <ejs-grid #grid id="adaptivebrowserOne" [dataSource]="isStaticData ? staticDataSource : dataSource"
+    [enableStickyHeader]="enableStickyHeader"
+    [gridLines]="gridLines" [allowSorting]="allowSorting" [pageSettings]="pageSettings"
+    [allowSelection]="allowSelection" [selectionSettings]="selectionSettings" [sortSettings]="sortSettings"
+    [enableInfiniteScrolling]="true" [enableColumnVirtualization]="false"
+     [allowResizing]="allowResizing" [enableAdaptiveUI]="!isDesktopMode"
+    [height]="height" [width]="width" [textWrapSettings]="wrapOption" allowTextWrap="true"
+    (rowDataBound)="onRowDataBound.emit($event)" (rowSelected)="onRowSelected.emit($event)"
+    (dataBound)="onDataBoundHandler($event)" (rowDeselected)="onRowDeselected.emit($event)"
+    (headerCellInfo)="onHeaderCellInfo.emit($event)" (dataStateChange)="onDataStateChange.emit($event)"
+    (actionBegin)="actionBegin.emit($event)" (actionComplete)="actionComplete.emit($event)"
+    (actionFailure)="actionFailure.emit($event)" enablePersistence="true">
+    <e-columns>
+        <ng-container *ngFor="let col of _columns">
+            <e-column [field]="col.field" [headerText]="col.headerText" [width]="col.width" [type]="col.type"
+                [freeze]="col.freeze" [visible]="col.isVisible !== false" [isPrimaryKey]="col.isPrimaryKey || false"
+                [allowFiltering]="col.allowFiltering || false" [allowSorting]="col.allowSorting || false"
+                [allowReordering]="col.allowReordering !== false"
+                [disableHtmlEncode]="isDisableHtmlEncodePresent(col)" [template]="columnTemplates?.[col.field]"
+                [headerTemplate]="headerTemplates?.[col.field]">
+            </e-column>
+        </ng-container>
+    </e-columns>
+    </ejs-grid>
+  </ng-container>

@@ -1,11 +1,7 @@
 import {
     ChangeDetectorRef,
     Component,
-    EventEmitter,
     Input,
-    OnInit,
-    Output,
-    viewChild,
     ViewChild,
   } from '@angular/core';
   
@@ -13,12 +9,12 @@ import {
   import { CommonModule } from '@angular/common';
   import { DataStateChangeEventArgs, GridLine, PageSettingsModel, SelectionSettingsModel } from '@syncfusion/ej2-grids';
   import { Observable } from 'rxjs';
-  import { OrdersService } from '../services/order.service';
   import { TabModule } from '@syncfusion/ej2-angular-navigations';
   import { SkeletonModule } from '@syncfusion/ej2-angular-notifications'
   
   import { TooltipModule } from '@syncfusion/ej2-angular-popups'
 import { AccountGrid } from './app/accountGrid/account-grid.component';
+import { OrdersService } from './app/accountGrid/order.service';
   @Component({
     selector: 'app-root',
     templateUrl: 'app.component.html',
@@ -90,15 +86,21 @@ import { AccountGrid } from './app/accountGrid/account-grid.component';
       this.service.execute(state);
       this.isShowSkeleton = false
     }
-  
     one() {
-      const shrinkTo = ['ShipName']; // Only show these fields
-      const visibleFields = ['ShipName']; // Only show this
+      const shrinkTo = ["ShipName"]; // Only show these fields
+      const visibleFields = ["ShipName"]; // Only show this
       this.toggleColumns(visibleFields);
-  
     }
     two() {
-      const visibleFields = ['OrderID', 'ShipName', 'CustomerID', 'EmployeeID', 'OrderDate', 'Freight', 'ShipCountry'];
+      const visibleFields = [
+        "OrderID",
+        "ShipName",
+        "CustomerID",
+        "EmployeeID",
+        "OrderDate",
+        "Freight",
+        "ShipCountry",
+      ];
       this.toggleColumns(visibleFields);
     }
   
@@ -106,11 +108,20 @@ import { AccountGrid } from './app/accountGrid/account-grid.component';
       const gridObj = this.gridInstance.grid;
       if (!gridObj) return;
   
-      gridObj.columns.forEach((col: any) => {
-        col.visible = visibleFields.includes(col.field);
-      });
+      const showColHeaderText: string[] = [];
+      const hideColHeaderText: string[] = [];
   
-      gridObj.refreshColumns(); // ✅ No full refresh, scroll and data are preserved
+      for (const col of gridObj.columns) {
+        if (!col.field) continue;
+        const target = visibleFields.includes(col.field)
+          ? showColHeaderText
+          : hideColHeaderText;
+        target.push(col.headerText);
+      }
+  
+      gridObj.showColumns(showColHeaderText);
+      gridObj.hideColumns(hideColHeaderText);
     }
+  
   }
   
